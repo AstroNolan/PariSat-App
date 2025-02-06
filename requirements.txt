@@ -1,7 +1,7 @@
 astropy==5.3.4
 dash==2.18.2
 dash_bootstrap_components==1.7.1
-numpy==2.2.2
+numpy==1.26.4
 pandas==2.2.3
 plotly==5.24.1
 poliastro==0.17.0

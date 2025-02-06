@@ -60,3 +60,5 @@ urllib3==2.3.0
 webencodings==0.5.1
 Werkzeug==3.0.6
 zipp==3.21.0
+gunicorn
+dash-tools

@@ -1,0 +1,55 @@
+body {
+    overflow: hidden;
+}
+
+.nav-pills .nav-link {
+    color: #2C3E50;
+}
+
+.nav-pills .nav-link.active {
+    color: #ECEFF1;
+    background-color: #2C3E50;
+}
+
+._dash-loading {
+    display: none !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    border-color: #2C3E50 !important;
+    box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25) !important;
+    outline: none !important;
+}
+
+button:focus-visible, a.nav-link:focus-visible {
+    border-color: #2C3E50 !important;
+    box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25) !important;
+    outline: none !important;
+}
+
+g.hovertext > path {
+    opacity: 0.5;
+}
+
+#scientific-analysis-graph g.hovertext > path {
+    opacity: 0.8 !important;
+}
+
+g.hovertext:not(#scientific-analysis-graph g.hovertext) text {
+    font-size: 1rem !important;
+}
+
+.markdown-container p {
+    margin-bottom: 0 !important;
+}

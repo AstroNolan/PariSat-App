@@ -1,6 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import Input, Output, dcc, html
+import time
 import modules.LiveTracking as LiveTracking
 import modules.NextPassage as NextPassage
 import modules.FlightTrajectory as FlightTrajectory
@@ -84,7 +85,7 @@ app.layout = html.Div([
     dcc.Location(id="url"),
     sidebar,
     content,
-    dcc.Interval(id="interval-component", interval=1*1000, n_intervals=0)
+    dcc.Interval(id="interval-component", interval=10*1000, n_intervals=0)
 ], style={"background-color": "#ECEFF1", "min-height": "100vh"})
 
 
@@ -359,8 +360,10 @@ def toggle_collapse(n_clicks, is_open):
      Input("interval-component", "n_intervals")]
 )
 def update_orbit(latitude, longitude, n_intervals):
+    init_time = time.time()
     latitude = latitude if latitude is not None else 48.8566
     longitude = longitude if longitude is not None else 2.3522
+    print(time.time() - init_time, n_intervals)
     return LiveTracking.ShowOrbit(latitude, longitude)
 
 

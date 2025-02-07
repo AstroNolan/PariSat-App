@@ -363,8 +363,9 @@ def update_orbit(latitude, longitude, n_intervals):
     init_time = time.time()
     latitude = latitude if latitude is not None else 48.8566
     longitude = longitude if longitude is not None else 2.3522
-    print(time.time() - init_time, n_intervals)
-    return LiveTracking.ShowOrbit(latitude, longitude)
+    fig = LiveTracking.ShowOrbit(latitude, longitude)
+    print((time.time() - init_time))
+    return fig
 
 
 @app.callback(

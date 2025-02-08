@@ -154,9 +154,9 @@ def ShowOrbit():
             lon=circle_lons,
             lat=circle_lats,
             mode='lines',
-            line=dict(width=0, color='#FF8668'),
+            line=dict(width=0, color='#FFB703'),
             fill='toself',
-            fillcolor='rgba(255, 134, 104, 0.5)',
+            fillcolor='rgba(255, 183, 3, 0.5)',
             opacity=0.5,
             hoverinfo='skip'
         )
@@ -200,7 +200,7 @@ def ShowOrbit():
         prs_spacecraft,
         t_span,
         label="Trajectory",
-        color="#FF3503",
+        color="#FFB703",
         line_style={"width": 2},
         marker={
             "size": 15,

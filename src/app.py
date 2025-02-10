@@ -84,7 +84,7 @@ app.layout = html.Div([
     dcc.Location(id="url"),
     sidebar,
     content,
-    dcc.Interval(id="interval-component", interval=1*1000, n_intervals=0)
+    dcc.Interval(id="interval-component", interval=2*1000, n_intervals=0)
 ], style={"background-color": "#ECEFF1", "min-height": "100vh"})
 
 

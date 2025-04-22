@@ -4,4 +4,4 @@ C’est une opportunité exceptionnelle pour le **GAREF**, qui mène de nombreus
 
 Après 3 ans de travail **PariSat** a donc été une occasion unique de mettre en orbite une nouvelle expérience, et c’est aussi pour le club la première occasion de prendre des photos depuis l’espace. Ce qui caractérise **PariSat**, c’est avant tout le fait d’être entièrement conçu et fabriqué en interne au **GAREF** par des jeunes passionnés de 15 à 25 ans, de l’architecture mécanique globale à la soudure des cartes en passant par la conception électronique et le logiciel.
 
-Retrouvez cette application sur https://parisat.garef.com, pour suivre en temps réel la position du atellite dans le ciel et découvrir les résultats scientifiques.
+Retrouvez cette application sur https://parisat.garef.com, pour suivre en temps réel la position du satellite dans le ciel et découvrir les résultats scientifiques.

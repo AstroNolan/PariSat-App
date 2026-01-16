@@ -22,9 +22,8 @@ def RoundTime(ti):
 def FindNextPass(satellite, observer, t, min_elevation):
     t0 = t
     t1 = t + timedelta(days=3)
-    times, events = satellite.find_events(
-        observer, t0, t1, altitude_degrees=min_elevation)
-
+    times, events = satellite.find_events(observer, t0, t1, altitude_degrees=0.0)
+    
     rise_time = None
     culminate_time = None
     set_time = None
@@ -32,22 +31,28 @@ def FindNextPass(satellite, observer, t, min_elevation):
     culmination_elevation = None
     culmination_distance = None
 
-    for ti, event in zip(times, events):
-        if event == 0:
-            rise_time = ti.utc_datetime()
-        elif event == 1:
-            culminate_time = ti.utc_datetime()
+    for i in range(len(events)):
+        if events[i] == 0:
+            rise_time = times[i].utc_datetime()
+        elif events[i] == 1:
+            culminate_time = times[i].utc_datetime()
             difference = satellite - observer
-            topocentric = difference.at(RoundTime(ti))
+            topocentric = difference.at(RoundTime(times[i]))
             alt, az, distance = topocentric.altaz()
+            if alt.degrees < min_elevation:
+                rise_time = culminate_time = set_time = None
+                continue
             culmination_azimuth = round(az.degrees, 2)
             culmination_elevation = round(alt.degrees, 2)
             culmination_distance = int(distance.km)
-        elif event == 2:
-            set_time = ti.utc_datetime()
-            break
-    return rise_time, culminate_time, set_time, culmination_azimuth, culmination_elevation, culmination_distance
-
+        elif events[i] == 2:  # set
+            if rise_time and culminate_time:
+                set_time = times[i].utc_datetime()
+                return (rise_time, culminate_time, set_time,
+                        culmination_azimuth, culmination_elevation, culmination_distance)
+            else:
+                rise_time = culminate_time = set_time = None
+    return None, None, None, None, None, None
 
 def NextPass(observer_lat, observer_lon, min_elevation):
     tle_line1, tle_line2 = GetTLE(60239)

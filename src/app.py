@@ -424,7 +424,7 @@ def display_hover_data(hoverData):
 )
 def download_report(n_clicks):
     if n_clicks:
-        return dcc.send_file("assets/GD2143A002-2.0 Rapport d'expérience PariSat.pdf")
+        return dcc.send_file("assets/Rapport PariSat.pdf")
 
 
 if __name__ == "__main__":
